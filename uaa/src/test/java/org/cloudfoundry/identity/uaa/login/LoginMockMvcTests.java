@@ -522,6 +522,17 @@ public class LoginMockMvcTests {
     }
 
     @Test
+    void loginPageIncludesReloadOnFocusScript() throws Exception {
+        String content = mockMvc
+                .perform(get("/login"))
+                .andExpect(status().isOk())
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
+        assertThat(content).contains("/resources/javascripts/login/reload_on_focus.js");
+    }
+
+    @Test
     void cookie_csrf() throws Exception {
         MockHttpSession session = new MockHttpSession();
 

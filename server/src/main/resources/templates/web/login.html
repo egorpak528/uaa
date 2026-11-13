@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}" lang="en">
 <head>
     <meta http-equiv="refresh" th:content="${@cookieBasedCsrfTokenRepository.getCookieMaxAge()}" />
+    <script type="text/javascript" defer="defer" src="/resources/javascripts/login/reload_on_focus.js" th:src="@{'/resources/javascripts/login/reload_on_focus.js'}"></script>
     <link th:if="${loginConsent != null}" href="/resources/oss/stylesheets/login-consent.css" th:href="@{${assetBaseUrl}+'/stylesheets/login-consent.css'}" rel="stylesheet"/>
     <script th:if="${loginConsent != null}" type="text/javascript" src="/resources/javascripts/login_consent/consent.js" th:src="@{'/resources/javascripts/login_consent/consent.js'}"></script>
 </head>
